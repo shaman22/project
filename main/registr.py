@@ -7,6 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+import images_rc
 
 
 class Ui_RegWindow(object):
@@ -14,7 +15,7 @@ class Ui_RegWindow(object):
         RegWindow.setObjectName("RegWindow")
         RegWindow.resize(1200, 800)
         RegWindow.setMinimumSize(QtCore.QSize(1200, 800))
-        RegWindow.setMaximumSize(QtCore.QSize(1200, 800))
+        RegWindow.setMaximumSize(QtCore.QSize(16777215, 16777215))
         self.centralwidget = QtWidgets.QWidget(parent=RegWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.centralwidget)
@@ -160,7 +161,7 @@ class Ui_RegWindow(object):
         self.radioButton.setObjectName("radioButton")
         self.gender = QtWidgets.QButtonGroup(RegWindow)
         self.gender.setObjectName("gender")
-        self.gender.addButton(self.radioButton)
+        self.gender.addButton(self.radioButton, 1)
         self.horizontalLayout_7.addWidget(self.radioButton)
         self.radioButton_2 = QtWidgets.QRadioButton(parent=self.layoutWidget)
         font = QtGui.QFont()
@@ -169,7 +170,7 @@ class Ui_RegWindow(object):
         font.setWeight(75)
         self.radioButton_2.setFont(font)
         self.radioButton_2.setObjectName("radioButton_2")
-        self.gender.addButton(self.radioButton_2)
+        self.gender.addButton(self.radioButton_2, 2)
         self.horizontalLayout_7.addWidget(self.radioButton_2)
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_7.addItem(spacerItem1)
@@ -199,18 +200,21 @@ class Ui_RegWindow(object):
         spacerItem3 = QtWidgets.QSpacerItem(48, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_8.addItem(spacerItem3)
         self.pushButton = QtWidgets.QPushButton(parent=self.layoutWidget)
-        self.pushButton.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+        self.pushButton.setStyleSheet("QPushButton#pushButton {\n"
+"    background-color: rgb(255, 255, 255);\n"
+"}\n"
 "\n"
 "QPushButton#pushButton:hover {\n"
 "    border-width: 2px; \n"
 "    border-style: solid;\n"
 "    border-color: black;\n"
-"    background-color: rgb(163, 163, 163);\n"
+"    background-color: #b6cafa;\n"
 "}\n"
 "\n"
 "QPushButton#pushButton:pressed {\n"
+"    background-color: #8eaefa;\n"
 "    border-style: solid;\n"
-"    border-color: white;\n"
+"    border-color: white; \n"
 "}")
         self.pushButton.setText("")
         icon = QtGui.QIcon()
@@ -531,33 +535,338 @@ class Ui_RegWindow(object):
         self.label_17.setObjectName("label_17")
         self.horizontalLayout_18.addWidget(self.label_17)
         self.pushButton_5 = QtWidgets.QPushButton(parent=self.layoutWidget1)
-        self.pushButton_5.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+        self.pushButton_5.setStyleSheet("QPushButton#pushButton_5 {\n"
+"    background-color: rgb(255, 255, 255);\n"
+"}\n"
 "\n"
-"QPushButton#pushButton:hover {\n"
+"QPushButton#pushButton_5:hover {\n"
 "    border-width: 2px; \n"
 "    border-style: solid;\n"
 "    border-color: black;\n"
-"    background-color: rgb(163, 163, 163);\n"
+"    background-color: #b6cafa;\n"
 "}\n"
 "\n"
-"QPushButton#pushButton:pressed {\n"
+"QPushButton#pushButton_5:pressed {\n"
+"    background-color: #8eaefa;\n"
 "    border-style: solid;\n"
-"    border-color: white;\n"
-"}")
+"    border-color: white; \n"
+"}\n"
+"")
         self.pushButton_5.setText("")
         icon4 = QtGui.QIcon()
         icon4.addPixmap(QtGui.QPixmap(":/logo/images/icons/folder.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_5.setIcon(icon4)
         self.pushButton_5.setObjectName("pushButton_5")
         self.horizontalLayout_18.addWidget(self.pushButton_5)
-        self.splitter = QtWidgets.QSplitter(parent=self.frame_6)
-        self.splitter.setGeometry(QtCore.QRect(90, 260, 401, 31))
-        self.splitter.setOrientation(QtCore.Qt.Orientation.Horizontal)
-        self.splitter.setObjectName("splitter")
-        self.label_18 = QtWidgets.QLabel(parent=self.splitter)
+        self.frame_7 = QtWidgets.QFrame(parent=self.frame_6)
+        self.frame_7.setGeometry(QtCore.QRect(20, 239, 531, 421))
+        self.frame_7.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.frame_7.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_7.setObjectName("frame_7")
+        self.widget = QtWidgets.QWidget(parent=self.frame_7)
+        self.widget.setGeometry(QtCore.QRect(20, 20, 501, 263))
+        self.widget.setObjectName("widget")
+        self.verticalLayout_18 = QtWidgets.QVBoxLayout(self.widget)
+        self.verticalLayout_18.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_18.setObjectName("verticalLayout_18")
+        self.verticalLayout_17 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_17.setObjectName("verticalLayout_17")
+        self.verticalLayout_16 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_16.setObjectName("verticalLayout_16")
+        self.verticalLayout_15 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_15.setObjectName("verticalLayout_15")
+        self.verticalLayout_14 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_14.setObjectName("verticalLayout_14")
+        self.verticalLayout_13 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_13.setObjectName("verticalLayout_13")
+        self.verticalLayout_12 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_12.setObjectName("verticalLayout_12")
+        self.horizontalLayout_19 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_19.setObjectName("horizontalLayout_19")
+        self.label_18 = QtWidgets.QLabel(parent=self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_18.setFont(font)
         self.label_18.setObjectName("label_18")
-        self.lineEdit_10 = QtWidgets.QLineEdit(parent=self.splitter)
+        self.horizontalLayout_19.addWidget(self.label_18)
+        self.comboBox_2 = QtWidgets.QComboBox(parent=self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.comboBox_2.setFont(font)
+        self.comboBox_2.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-width: 2px; \n"
+"border-style: solid;\n"
+"border-color: black;")
+        self.comboBox_2.setObjectName("comboBox_2")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.comboBox_2.addItem("")
+        self.horizontalLayout_19.addWidget(self.comboBox_2)
+        self.verticalLayout_12.addLayout(self.horizontalLayout_19)
+        self.horizontalLayout_20 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_20.setObjectName("horizontalLayout_20")
+        self.label_19 = QtWidgets.QLabel(parent=self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_19.setFont(font)
+        self.label_19.setObjectName("label_19")
+        self.horizontalLayout_20.addWidget(self.label_19)
+        self.comboBox_3 = QtWidgets.QComboBox(parent=self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.comboBox_3.setFont(font)
+        self.comboBox_3.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-width: 2px; \n"
+"border-style: solid;\n"
+"border-color: black;")
+        self.comboBox_3.setObjectName("comboBox_3")
+        self.horizontalLayout_20.addWidget(self.comboBox_3)
+        self.verticalLayout_12.addLayout(self.horizontalLayout_20)
+        self.verticalLayout_13.addLayout(self.verticalLayout_12)
+        self.horizontalLayout_21 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_21.setObjectName("horizontalLayout_21")
+        self.label_20 = QtWidgets.QLabel(parent=self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_20.setFont(font)
+        self.label_20.setObjectName("label_20")
+        self.horizontalLayout_21.addWidget(self.label_20)
+        self.comboBox_4 = QtWidgets.QComboBox(parent=self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.comboBox_4.setFont(font)
+        self.comboBox_4.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-width: 2px; \n"
+"border-style: solid;\n"
+"border-color: black;")
+        self.comboBox_4.setObjectName("comboBox_4")
+        self.horizontalLayout_21.addWidget(self.comboBox_4)
+        self.verticalLayout_13.addLayout(self.horizontalLayout_21)
+        self.verticalLayout_14.addLayout(self.verticalLayout_13)
+        self.horizontalLayout_22 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_22.setObjectName("horizontalLayout_22")
+        self.label_21 = QtWidgets.QLabel(parent=self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_21.setFont(font)
+        self.label_21.setObjectName("label_21")
+        self.horizontalLayout_22.addWidget(self.label_21)
+        self.comboBox_5 = QtWidgets.QComboBox(parent=self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.comboBox_5.setFont(font)
+        self.comboBox_5.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-width: 2px; \n"
+"border-style: solid;\n"
+"border-color: black;")
+        self.comboBox_5.setObjectName("comboBox_5")
+        self.comboBox_5.addItem("")
+        self.comboBox_5.addItem("")
+        self.comboBox_5.addItem("")
+        self.comboBox_5.addItem("")
+        self.comboBox_5.addItem("")
+        self.comboBox_5.addItem("")
+        self.comboBox_5.addItem("")
+        self.comboBox_5.addItem("")
+        self.comboBox_5.addItem("")
+        self.comboBox_5.addItem("")
+        self.horizontalLayout_22.addWidget(self.comboBox_5)
+        self.verticalLayout_14.addLayout(self.horizontalLayout_22)
+        self.verticalLayout_15.addLayout(self.verticalLayout_14)
+        self.horizontalLayout_23 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_23.setObjectName("horizontalLayout_23")
+        self.label_22 = QtWidgets.QLabel(parent=self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_22.setFont(font)
+        self.label_22.setObjectName("label_22")
+        self.horizontalLayout_23.addWidget(self.label_22)
+        self.lineEdit_10 = QtWidgets.QLineEdit(parent=self.widget)
+        self.lineEdit_10.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-width: 2px; \n"
+"border-style: solid;\n"
+"border-color: black;")
+        self.lineEdit_10.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.lineEdit_10.setObjectName("lineEdit_10")
+        self.horizontalLayout_23.addWidget(self.lineEdit_10)
+        self.verticalLayout_15.addLayout(self.horizontalLayout_23)
+        self.verticalLayout_16.addLayout(self.verticalLayout_15)
+        self.horizontalLayout_24 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_24.setObjectName("horizontalLayout_24")
+        self.label_23 = QtWidgets.QLabel(parent=self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_23.setFont(font)
+        self.label_23.setObjectName("label_23")
+        self.horizontalLayout_24.addWidget(self.label_23)
+        self.lineEdit_11 = QtWidgets.QLineEdit(parent=self.widget)
+        self.lineEdit_11.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"border-width: 2px; \n"
+"border-style: solid;\n"
+"border-color: black;")
+        self.lineEdit_11.setObjectName("lineEdit_11")
+        self.horizontalLayout_24.addWidget(self.lineEdit_11)
+        self.verticalLayout_16.addLayout(self.horizontalLayout_24)
+        self.verticalLayout_17.addLayout(self.verticalLayout_16)
+        self.horizontalLayout_25 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_25.setObjectName("horizontalLayout_25")
+        self.label_24 = QtWidgets.QLabel(parent=self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_24.setFont(font)
+        self.label_24.setObjectName("label_24")
+        self.horizontalLayout_25.addWidget(self.label_24)
+        spacerItem10 = QtWidgets.QSpacerItem(68, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_25.addItem(spacerItem10)
+        self.spinBox = QtWidgets.QSpinBox(parent=self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.spinBox.setFont(font)
+        self.spinBox.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.spinBox.setObjectName("spinBox")
+        self.horizontalLayout_25.addWidget(self.spinBox)
+        spacerItem11 = QtWidgets.QSpacerItem(78, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_25.addItem(spacerItem11)
+        self.verticalLayout_17.addLayout(self.horizontalLayout_25)
+        self.verticalLayout_18.addLayout(self.verticalLayout_17)
+        self.horizontalLayout_26 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_26.setObjectName("horizontalLayout_26")
+        self.label_25 = QtWidgets.QLabel(parent=self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_25.setFont(font)
+        self.label_25.setObjectName("label_25")
+        self.horizontalLayout_26.addWidget(self.label_25)
+        spacerItem12 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_26.addItem(spacerItem12)
+        self.radioButton_7 = QtWidgets.QRadioButton(parent=self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.radioButton_7.setFont(font)
+        self.radioButton_7.setObjectName("radioButton_7")
+        self.role = QtWidgets.QButtonGroup(RegWindow)
+        self.role.setObjectName("role")
+        self.role.addButton(self.radioButton_7)
+        self.horizontalLayout_26.addWidget(self.radioButton_7)
+        self.radioButton_8 = QtWidgets.QRadioButton(parent=self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.radioButton_8.setFont(font)
+        self.radioButton_8.setObjectName("radioButton_8")
+        self.role.addButton(self.radioButton_8)
+        self.horizontalLayout_26.addWidget(self.radioButton_8)
+        self.radioButton_9 = QtWidgets.QRadioButton(parent=self.widget)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.radioButton_9.setFont(font)
+        self.radioButton_9.setObjectName("radioButton_9")
+        self.role.addButton(self.radioButton_9)
+        self.horizontalLayout_26.addWidget(self.radioButton_9)
+        spacerItem13 = QtWidgets.QSpacerItem(48, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_26.addItem(spacerItem13)
+        self.verticalLayout_18.addLayout(self.horizontalLayout_26)
+        self.pushButton_6 = QtWidgets.QPushButton(parent=self.frame_6)
+        self.pushButton_6.setGeometry(QtCore.QRect(110, 670, 121, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_6.setFont(font)
+        self.pushButton_6.setStyleSheet("\n"
+"QPushButton#pushButton_6 {\n"
+"    background-color: #ebf0fa;\n"
+"    border-width: 2px;\n"
+"    border-style: solid;\n"
+"    border-color: black;\n"
+"}\n"
+"\n"
+"QPushButton#pushButton_6:hover {\n"
+"    background-color: #b6cafa;\n"
+"}\n"
+"\n"
+"QPushButton#pushButton_6:pressed {\n"
+"    background-color: #8eaefa;     \n"
+"}")
+        self.pushButton_6.setObjectName("pushButton_6")
+        self.pushButton_7 = QtWidgets.QPushButton(parent=self.frame_6)
+        self.pushButton_7.setGeometry(QtCore.QRect(240, 670, 121, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_7.setFont(font)
+        self.pushButton_7.setStyleSheet("\n"
+"QPushButton#pushButton_7 {\n"
+"    background-color: #ebf0fa;\n"
+"    border-width: 2px;\n"
+"    border-style: solid;\n"
+"    border-color: black;\n"
+"}\n"
+"\n"
+"QPushButton#pushButton_7:hover {\n"
+"    background-color: #b6cafa;\n"
+"}\n"
+"\n"
+"QPushButton#pushButton_7:pressed {\n"
+"    background-color: #8eaefa;    \n"
+"}")
+        self.pushButton_7.setObjectName("pushButton_7")
+        self.pushButton_8 = QtWidgets.QPushButton(parent=self.frame_6)
+        self.pushButton_8.setGeometry(QtCore.QRect(370, 670, 121, 31))
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_8.setFont(font)
+        self.pushButton_8.setStyleSheet("\n"
+"QPushButton#pushButton_8 {\n"
+"    background-color: #ebf0fa;\n"
+"    border-width: 2px;\n"
+"    border-style: solid;\n"
+"    border-color: black;\n"
+"}\n"
+"\n"
+"QPushButton#pushButton_8:hover {\n"
+"    background-color: #b6cafa;\n"
+"}\n"
+"\n"
+"QPushButton#pushButton_8:pressed {\n"
+"    background-color: #8eaefa;      \n"
+"}")
+        self.pushButton_8.setObjectName("pushButton_8")
         self.horizontalLayout.addWidget(self.frame_2)
         RegWindow.setCentralWidget(self.centralwidget)
 
@@ -568,18 +877,27 @@ class Ui_RegWindow(object):
         _translate = QtCore.QCoreApplication.translate
         RegWindow.setWindowTitle(_translate("RegWindow", "MainWindow"))
         self.label.setText(_translate("RegWindow", "Ургийн овог:              "))
-        self.label_2.setText(_translate("RegWindow", "Овог:                           "))
+        self.lineEdit.setPlaceholderText(_translate("RegWindow", "Боржигон"))
+        self.label_2.setText(_translate("RegWindow", "Эцэг / эхийн нэр:      "))
+        self.lineEdit_2.setPlaceholderText(_translate("RegWindow", "Есүхэй"))
         self.label_3.setText(_translate("RegWindow", "Нэр:                             "))
+        self.lineEdit_3.setPlaceholderText(_translate("RegWindow", "Тэмүүжин"))
         self.label_5.setText(_translate("RegWindow", "Үндэс угсаа:              "))
+        self.lineEdit_5.setPlaceholderText(_translate("RegWindow", "Хиад Боржигон"))
         self.label_12.setText(_translate("RegWindow", "Хүйс:"))
         self.radioButton.setText(_translate("RegWindow", "Эрэгтэй"))
         self.radioButton_2.setText(_translate("RegWindow", "Эмэгтэй"))
         self.label_4.setText(_translate("RegWindow", "Төрсөн огноо:"))
         self.label_9.setText(_translate("RegWindow", "Нэвтрэх нэр:              "))
+        self.lineEdit_7.setPlaceholderText(_translate("RegWindow", "Chinggis_1962"))
         self.label_7.setText(_translate("RegWindow", "Нууц үг:                        "))
+        self.lineEdit_4.setPlaceholderText(_translate("RegWindow", "Chinggis123"))
         self.label_8.setText(_translate("RegWindow", "Нууц үгээ давтана уу"))
+        self.lineEdit_6.setPlaceholderText(_translate("RegWindow", "Chinggis123"))
         self.label_10.setText(_translate("RegWindow", "Төрсөн аймаг, хот:     "))
+        self.lineEdit_8.setPlaceholderText(_translate("RegWindow", "Хэнтий аймаг"))
         self.label_11.setText(_translate("RegWindow", "Сум, дүүрэг:                  "))
+        self.lineEdit_9.setPlaceholderText(_translate("RegWindow", "Дадал сум"))
         self.label_13.setText(_translate("RegWindow", "Гэрлэлтийн байдал:"))
         self.radioButton_3.setText(_translate("RegWindow", "Гэрлэсэн"))
         self.radioButton_4.setText(_translate("RegWindow", "Гэрлээгүй"))
@@ -598,4 +916,33 @@ class Ui_RegWindow(object):
         self.comboBox.setItemText(8, _translate("RegWindow", "Sc.D"))
         self.label_16.setText(_translate("RegWindow", "Photo"))
         self.label_17.setText(_translate("RegWindow", "Зурагаа оруулах"))
-        self.label_18.setText(_translate("RegWindow", "TextLabel"))
+        self.label_18.setText(_translate("RegWindow", "Газар:"))
+        self.comboBox_2.setItemText(0, _translate("RegWindow", "Хамгаалалтын газар"))
+        self.comboBox_2.setItemText(1, _translate("RegWindow", "Санхүү, хангалт, үйлчилгээний газар"))
+        self.comboBox_2.setItemText(2, _translate("RegWindow", "Захиргааны удирдлагын газар"))
+        self.comboBox_2.setItemText(3, _translate("RegWindow", "Тусгай хэлтэс"))
+        self.label_19.setText(_translate("RegWindow", "Хэлтэс, тусгай тасаг, тасаг:"))
+        self.label_20.setText(_translate("RegWindow", "Албан тушаал:"))
+        self.label_21.setText(_translate("RegWindow", "Цол:"))
+        self.comboBox_5.setItemText(0, _translate("RegWindow", "Бригадын генерал"))
+        self.comboBox_5.setItemText(1, _translate("RegWindow", "Хурандаа"))
+        self.comboBox_5.setItemText(2, _translate("RegWindow", "Дэд хурандаа"))
+        self.comboBox_5.setItemText(3, _translate("RegWindow", "Хошууч"))
+        self.comboBox_5.setItemText(4, _translate("RegWindow", "Ахмад"))
+        self.comboBox_5.setItemText(5, _translate("RegWindow", "Ахлах дэслэгч"))
+        self.comboBox_5.setItemText(6, _translate("RegWindow", "Дэслэгч"))
+        self.comboBox_5.setItemText(7, _translate("RegWindow", "Ахлах ахлагч"))
+        self.comboBox_5.setItemText(8, _translate("RegWindow", "Ахлагч"))
+        self.comboBox_5.setItemText(9, _translate("RegWindow", "Дэд ахлагч"))
+        self.label_22.setText(_translate("RegWindow", "Утасны дугаар:"))
+        self.lineEdit_10.setPlaceholderText(_translate("RegWindow", "99119911"))
+        self.label_23.setText(_translate("RegWindow", "Цахим шуудангийн хаяг:"))
+        self.lineEdit_11.setPlaceholderText(_translate("RegWindow", "Chinggis_khaan@mail.com"))
+        self.label_24.setText(_translate("RegWindow", "Ажилласан жил:"))
+        self.label_25.setText(_translate("RegWindow", "Үүрэг:"))
+        self.radioButton_7.setText(_translate("RegWindow", "Сэтгэл зүйч"))
+        self.radioButton_8.setText(_translate("RegWindow", "Судлаач"))
+        self.radioButton_9.setText(_translate("RegWindow", "Судлуулагч"))
+        self.pushButton_6.setText(_translate("RegWindow", "Бүртгүүлэх"))
+        self.pushButton_7.setText(_translate("RegWindow", "Цуцлах"))
+        self.pushButton_8.setText(_translate("RegWindow", "Буцах"))
