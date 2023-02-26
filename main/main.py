@@ -87,6 +87,7 @@ class LoginWindow(QtWidgets.QMainWindow):
         self.username = self.reg.lineEdit_7.text()
         self.password = self.reg.lineEdit_4.text()
         self.password_confirmation = self.reg.lineEdit_6.text()
+        # self.password_confirm_checker(self.password, self.password_confirmation)
         self.place_of_birth = self.reg.lineEdit_8.text()
         self.place_of_birth2 = self.reg.lineEdit_9.text()
         self.marital_status = self.marital_picker()
@@ -168,6 +169,16 @@ class LoginWindow(QtWidgets.QMainWindow):
         self.image = self.pixmap
         return self.image
 
+    def password_confirm_checker(self, password, password_confirm):
+        if password != password_confirm and password is None:
+            return self.reg.confirm_icon.setStyleSheet("background-color: red;")
+        elif password == password_confirm and password is not None:
+            return self.reg.confirm_icon.setStyleSheet("background-color: green;")
+        else:
+            return
+
+
+
 
 
 
@@ -176,5 +187,6 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     window = LoginWindow()
     window.show()
+    # window.password_confirm_checker()
     sys.exit(app.exec())
 
