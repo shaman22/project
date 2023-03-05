@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
+from calendar import Ui_Calendar
 from PyQt6 import QtWidgets, QtGui
 from login import Ui_Login
 from PyQt6.QtCore import Qt
 import sys
 from registr import Ui_RegWindow
-from calendar import Ui_Calendar
 from enum import Enum
 from dataclasses import dataclass
 from typing import Any
@@ -66,6 +66,7 @@ class LoginWindow(QtWidgets.QMainWindow):
 
         # Registration window
         self.reg = Ui_RegWindow()
+        
 
 
 
@@ -78,22 +79,22 @@ class LoginWindow(QtWidgets.QMainWindow):
         # Showing a registration window
         self.reg.setupUi(self)
 
-        self.family_name = self.reg.lineEdit.text()
-        self.surname = self.reg.lineEdit_2.text()
-        self.given_name = self.reg.lineEdit_3.text()
-        self.nationality = self.reg.lineEdit_5.text()
-        self.sex = self.sex_picker()
-        self.date_of_birth = self.reg.dateEdit.date().toPyDate()
-        self.username = self.reg.lineEdit_7.text()
-        self.password = self.reg.lineEdit_4.text()
-        self.password_confirmation = self.reg.lineEdit_6.text()
+        self.reg.family_name = self.reg.lineEdit.text()
+        self.reg.surname = self.reg.lineEdit_2.text()
+        self.reg.given_name = self.reg.lineEdit_3.text()
+        self.reg.nationality = self.reg.lineEdit_5.text()
+        self.reg.sex = self.sex_picker()
+        self.reg.date_of_birth = self.reg.dateEdit.date().toPyDate()
+        self.reg.username = self.reg.lineEdit_7.text()
+        self.reg.password = self.reg.lineEdit_4.text()
+        self.reg.password_confirmation = self.reg.lineEdit_6.text()
         # self.password_confirm_checker(self.password, self.password_confirmation)
-        self.place_of_birth = self.reg.lineEdit_8.text()
-        self.place_of_birth2 = self.reg.lineEdit_9.text()
-        self.marital_status = self.marital_picker()
-        self.military_status = self.military_status_picker()
-        self.education_status = self.reg.comboBox.currentText()
-        self.image = None
+        self.reg.place_of_birth = self.reg.lineEdit_8.text()
+        self.reg.place_of_birth2 = self.reg.lineEdit_9.text()
+        self.reg.marital_status = self.marital_picker()
+        self.reg.military_status = self.military_status_picker()
+        self.reg.education_status = self.reg.comboBox.currentText()
+        self.reg.image = None
         # self.office =
         # self.unit =
         # self.specialization =
@@ -110,30 +111,33 @@ class LoginWindow(QtWidgets.QMainWindow):
         self.reg.pushButton_5.clicked.connect(self.image_file_dialog_open)
 
 
+        self.reg.pushButton_6.clicked.connect(self.done_registration)
+
+
 
 
     def pick_date(self):
-        self.calendar_widget = QtWidgets.QMainWindow()
+        self.reg.calendar_widget = QtWidgets.QMainWindow()
         #calendar window
-        self.calendar_form = Ui_Calendar()
-        self.calendar_form.setupUi(self.calendar_widget)
-        self.calendar_form.calendarWidget.selectionChanged.connect(self.date_select)
-        self.calendar_form.pushButton.clicked.connect(self.date_changer)
-        self.calendar_form.pushButton_2.clicked.connect(self.calendar_cancel)
-        self.calendar_widget.show()
+        self.reg.calendar_form = Ui_Calendar()
+        self.reg.calendar_form.setupUi(self.calendar_widget)
+        self.reg.calendar_form.calendarWidget.selectionChanged.connect(self.date_select)
+        self.reg.calendar_form.pushButton.clicked.connect(self.date_changer)
+        self.reg.calendar_form.pushButton_2.clicked.connect(self.calendar_cancel)
+        self.reg.calendar_widget.show()
 
     def date_select(self):
-        self.date_selected = self.calendar_form.calendarWidget.selectedDate()
-        self.calendar_form.label.setText(str(self.date_selected.toPyDate()))
+        self.date_selected = self.reg.calendar_form.calendarWidget.selectedDate()
+        self.reg.calendar_form.label.setText(str(self.date_selected.toPyDate()))
         # print(self.date_selected)
 
     def date_changer(self):
         self.reg.dateEdit.setDate(self.date_selected)
-        self.calendar_widget.close()
+        self.reg.calendar_widget.close()
 
 
     def calendar_cancel(self):
-        self.calendar_widget.close()
+        self.reg.calendar_widget.close()
 
     def sex_picker(self) -> Sex | None:
         if self.reg.radioButton.isChecked():
@@ -170,12 +174,16 @@ class LoginWindow(QtWidgets.QMainWindow):
         return self.image
 
     def password_confirm_checker(self, password, password_confirm):
-        if password != password_confirm and password is None:
+        if password != password_confirm:
             return self.reg.confirm_icon.setStyleSheet("background-color: red;")
-        elif password == password_confirm and password is not None:
+        elif password == password_confirm:
             return self.reg.confirm_icon.setStyleSheet("background-color: green;")
         else:
-            return
+            return 
+
+    def done_registration(self):
+        self.password_confirm_checker(self.reg.password, self.reg.password_confirmation)
+        print("done registration")
 
 
 
